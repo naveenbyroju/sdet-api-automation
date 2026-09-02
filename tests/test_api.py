@@ -1,10 +1,10 @@
-import requests
+from api.api_client import APIClient
 
 
 def test_get_posts():
-    response = requests.get(
-        "https://jsonplaceholder.typicode.com/posts/1"
-    )
+    api_client = APIClient()
+
+    response = api_client.get("/posts/1")
 
     assert response.status_code == 200
 
